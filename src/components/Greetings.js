@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRandomGreeting  } from '../store/greetings/greetingSlice';
+import { fetchRandomGreeting } from '../store/greetings/greetingSlice';
 import './Greetings.css';
 
-
-const Greetings = () => {
+function Greetings() {
   const dispatch = useDispatch();
   const { greeting, error, loading } = useSelector((state) => state.greetings);
 
   useEffect(() => {
-    dispatch(fetchRandomGreeting ());
+    dispatch(fetchRandomGreeting());
   }, []);
 
   return (
@@ -18,11 +17,13 @@ const Greetings = () => {
       {error && <p className="error-message">{error}</p>}
       {greeting && (
         <p className="greeting-message">
-          Saludo: {greeting}
+          Saludo:
+          {' '}
+          {greeting}
         </p>
       )}
     </div>
   );
-};
+}
 
 export default Greetings;

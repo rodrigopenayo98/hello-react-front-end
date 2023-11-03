@@ -23,10 +23,8 @@ const greetingSlice = createSlice({
         return newState;
       })
 
-      .addCase(fetchRandomGreeting.fulfilled, (state, action) => {
-        return { ...state, greeting: action.payload.message, loading: false };
-      })
-      
+      .addCase(fetchRandomGreeting.fulfilled, (state, action) => ({ ...state, greeting: action.payload.message, loading: false }))
+
       .addCase(fetchRandomGreeting.rejected, (state) => {
         const newState = { ...state, error: 'Error 404. Failed to fetch', loading: false };
         return newState;
