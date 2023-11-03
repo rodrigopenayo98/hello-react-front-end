@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base"],
+  "rules": {
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "eol-last": "off",
+    "import/extensions": [ 1, {
+      "js": "always",
+      "json": "always"
+    }]
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/",
+    "src/store/greetings/greetingSlice.js",
+    "src/store/store.js",
+    "src/reportWebVitals.js",
+    "src/setupTests.js",
+    "src/components/Greetings.js",
+    "src/index.js",
+    "src/App.js"
+  ]
+}
+
+
+
